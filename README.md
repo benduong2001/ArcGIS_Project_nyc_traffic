@@ -1,5 +1,5 @@
 # Geospatial Data Science Project: New York City Traffic
-This GIS data science project is an exploration of traffic volume statistics in New York City. This README file is a simplified version of the Part 1 notebook, and only includes most of the ArcGIS data preparation, main EDA graphs, and plots from the machine learning model.
+This GIS data science project is an exploration of traffic volume statistics in New York City. This README file is a simplified version of the Part 1 notebook, and only includes most of the ArcGIS data preparation, main EDA graphs, and output plots from the predictive machine learning model.
 
 ## Data Preparation in ArcGIS
 First, we'll need 3 **base datasets** taken from online.
@@ -87,7 +87,7 @@ So now, if you select say, street segment 30786, it is tied to these buildings: 
 
 The ArcGIS portion is complete: each street segment now has its little carved-out, 500ft-radius subset of New York City! But remember, this was done with the OneToOneJoin. So later on, we have to rejoin this layer with the gdb_join dataframe. But that can easily be done on pandas, outside of ArcGIS.
 
-## Final EDA graphs and Predictive Modelling results
+## Final EDA graphs and Predictive Model Results from the Machine Learning Portion.
 
 * Traffic volume across time of day in terms of business days versus weekend.
 
@@ -105,6 +105,6 @@ The ArcGIS portion is complete: each street segment now has its little carved-ou
 
 ![](ArcGIS_Project_nyc_traffic_pics/download32.png)
 
-* But not all of these features are needed. Only the hour features (Hr*), and the LandUse features are necessaary to predict its traffic volume severity, at a roughly 86% accuracy rate.
+* But not all of these features are needed for the Machine Learning Model (Decision Tree). Only the hour features (Hr*), and the LandUse features are necessaary to predict its traffic volume severity, at a roughly 86% accuracy rate.
 
 ![](ArcGIS_Project_nyc_traffic_pics/download33.png)
