@@ -110,3 +110,7 @@ The ArcGIS portion is complete: each street segment now has its little carved-ou
 * But not all of these features are needed for the Machine Learning Model. Only the hour features (Hr*), and the LandUse features are necessaary to predict its traffic volume severity, at a roughly 86% accuracy rate.
 
 ![](ArcGIS_Project_nyc_traffic_pics/download33.png)
+
+## Testing Traffic Yourself
+
+Use part5 to test your own traffic predictions.
