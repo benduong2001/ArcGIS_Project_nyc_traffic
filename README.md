@@ -89,19 +89,13 @@ So now, if you select say, street segment 30786, it is tied to these buildings: 
 The ArcGIS portion is complete: each street segment now has its little carved-out, 500ft-radius subset of New York City! But remember, this was done with the OneToOneJoin. So later on, we have to rejoin this layer with the gdb_join dataframe. But that can easily be done on pandas, outside of ArcGIS.
 
 ## Final EDA graphs and Predictive Modelling results
-
-![](ArcGIS_Project_nyc_traffic_pics/download (17).png)
-
-![](ArcGIS_Project_nyc_traffic_pics/download (3).png)
-
-![](ArcGIS_Project_nyc_traffic_pics/download (15).png)
-
-![](ArcGIS_Project_nyc_traffic_pics/download (16).png)
-
-![](ArcGIS_Project_nyc_traffic_pics/download (18).png)
-
-![](ArcGIS_Project_nyc_traffic_pics/download (19).png)
-
-![](ArcGIS_Project_nyc_traffic_pics/download (32).png)
-
-![](ArcGIS_Project_nyc_traffic_pics/download (33).png)
+* Traffic volume across time of day in terms of business days versus weekend.
+![](ArcGIS_Project_nyc_traffic_pics/download17.png)
+* Traffic volume across time of day, in terms of Boroughs 
+![](ArcGIS_Project_nyc_traffic_pics/download15.png)
+* Traffic volume across time of day, in terms of the Predominant LandUse in the street segment's local surrounding area
+![](ArcGIS_Project_nyc_traffic_pics/download16.png)
+* A final (spearman) correlation heatmap of the features so far.
+![](ArcGIS_Project_nyc_traffic_pics/download32.png)
+* But not all of these features are needed. Only the hour features (Hr*), and the LandUse features are necessaary to predict its traffic volume severity, at a roughly 86% accuracy rate.
+![](ArcGIS_Project_nyc_traffic_pics/download33.png)
