@@ -10,7 +10,9 @@ https://data.cityofnewyork.us/City-Government/LION/2v4z-66xt
 * A dataset that shows the Landuse and census parcels of New York City
 https://www1.nyc.gov/site/planning/data-maps/open-data/dwn-pluto-mappluto.page
 ### *Getting the Street Segment Traffic Data into a GIS-friendly Format*
-Opening the traffic CSV file (the first base dataset) on ArcMap, you'll come across the first problem. **There is no geospatial data usable with this csv file**. The closest column we have are the street names, which is a bad thing to resort to, since string data like this can be wildly inconsistent from one data source to another (East 73rd Street in one CSV might be 73 St. E in another).
+First, get the first dataset, and run it through part0. It mostly undergoes data-cleaning, melting, and creation of columns for different tiers of data granularity in terms of time, for time of year, time of week, and time of day. The resulting csv "nyc_traffic_3hrInterval", will be referred to as the "traffic CSV file" for the rest of this project.
+
+Opening the traffic CSV file on ArcMap, you'll come across the first problem. **There is no geospatial data usable with this csv file**. The closest column we have are the street names, which is a bad thing to resort to, since string data like this can be wildly inconsistent from one data source to another (East 73rd Street in one CSV might be 73 St. E in another).
 
 But there's no reason to panic. Luckily, the metadata for that traffic CSV file shows that the column "Segment ID" is an identifier for each street segment. After some internet sleuthing, you will eventually find an online data source with a name like "nyc_lion" (the second base dataset), which has extensive data on NYC street segments, including a column with the exact same identifier. Most importantly, it includes shapefiles that will allow us to use geospatial data. 
 
