@@ -17,7 +17,7 @@ But there's no reason to panic. Luckily, the metadata for that traffic CSV file 
 
 * Download the nyclion dataset, and open up it on ArcMaps. 
 * Drag the "lion" layer into ArcMaps from the catalog. This will show a comprehensive polyline street map of New York City. This is the only layer we will actually need from nyclion; the rest of the data folder wastes up a lot of storage, so export the lion layer as a lone shape file and delete the other stuff. So now, we just have the lion shapefile, and the traffic csv. 
-![](Arcgis_Project_nyc_traffic_pics/cropped12.png)
+![](ArcGIS_Project_nyc_traffic_pics/cropped12.png)
 Now, we must do a join between the shapefile dataframe and the csv dataframe on the foreign key Segment ID. But there's a side-issue that must be resolved first. In the traffic csv layer, the Segment ID's type is a long integer. Meanwhile, in the lion shapefile layer, the Segment ID is a 7-character string that's zero-padded in the front. This formatting difference will ruin the join.
 
 This can be resolved by making a new column with the correctly formatted segment ID. 
@@ -37,7 +37,7 @@ According to this forum post: https://gis.stackexchange.com/questions/177506/one
 
 That final, resulting join layer ("gdb_join") should appear like this (It does not need to be green). All the other layers were hidden and a BaseMap was added underneath to show the purpose of this join. 
 
-![](Arcgis_Project_nyc_traffic_pics/cropped40.png)
+![](ArcGIS_Project_nyc_traffic_pics/cropped40.png)
 
 In summary, for the 1st base dataset listed at the beginning, we had to join it with the 2nd base dataset, so that its street segment traffic data could be geospatially usable and visually seen when loaded up onto ArcMap.
 ### *Retrieval of Geospatial Data Surrounding the Street Segments*
@@ -58,7 +58,7 @@ For New York City, data for land-parcels is available in the 3rd base dataset (n
 * Load the shapefile up
 * Rename this shapefile layer as "LandUse".
 Zooming in, the LandUse shapefile layer (pink) represents the parcels and lots on each city-block. The lion shapefile layer (dark red), and the new gdb_join shapefile layer (bright green) are also shown
-![](Arcgis_Project_nyc_traffic_pics/cropped55.png)
+![](ArcGIS_Project_nyc_traffic_pics/cropped55.png)
 
 Remember that "failed" OneToOneJoin shapefile layer created back then? This is when it gets used again.
 Use the Geoprocessing > Buffer Tool with the following parameters:
@@ -67,14 +67,14 @@ Use the Geoprocessing > Buffer Tool with the following parameters:
 * Dissolve: None
 
 Run the buffer tool, and rename the resulting layer as "StreetSegmentBlobs". You should have a result like this: These "blobs" are the area 500ft around the the street segment. The reason that the "Failed join" layer ("OneToOneJoin" layer) was used is to avoid having redundant "blobs" stacked onto each other; only 1 is necessary for each street segment.
-![](Arcgis_Project_nyc_traffic_pics/cropped58.png)
+![](ArcGIS_Project_nyc_traffic_pics/cropped58.png)
 
 Next, use the Geoprocessing > Clip tool with the following parameters:
 * Input Features: the new LandUse dataframe layer
 * Clip Features: the StreetSegmentBlobs Layer from the last step
 
 Run the Clip tool, which might take a while. Name the new clipped layer as StreetSegment_LandUse_Clipped.
-![](Arcgis_Project_nyc_traffic_pics/cropped79.png)
+![](ArcGIS_Project_nyc_traffic_pics/cropped79.png)
 
 Finally, use the Customize > ArcToolbox > Analysis Tools > Overlay > Spatial Join tool with the following parameters:
 * Target Features: the LandUse_StreetSegmentBlobs_Clipped layer
@@ -84,24 +84,24 @@ Finally, use the Customize > ArcToolbox > Analysis Tools > Overlay > Spatial Joi
 * Name the resulting layer as StreetSegment_LandUse_Subsets, and export the dataframe of it to a txt file for later use as a CSV.
 
 So now, if you select say, street segment 30786, it is tied to these buildings: #80
-![](Arcgis_Project_nyc_traffic_pics/cropped80.png)
+![](ArcGIS_Project_nyc_traffic_pics/cropped80.png)
 
 The ArcGIS portion is complete: each street segment now has its little carved-out, 500ft-radius subset of New York City! But remember, this was done with the OneToOneJoin. So later on, we have to rejoin this layer with the gdb_join dataframe. But that can easily be done on pandas, outside of ArcGIS.
 
 ## Final EDA graphs and Predictive Modelling results
 
-![](Arcgis_Project_nyc_traffic_pics/download (17).png)
+![](ArcGIS_Project_nyc_traffic_pics/download (17).png)
 
-![](Arcgis_Project_nyc_traffic_pics/download (3).png)
+![](ArcGIS_Project_nyc_traffic_pics/download (3).png)
 
-![](Arcgis_Project_nyc_traffic_pics/download (15).png)
+![](ArcGIS_Project_nyc_traffic_pics/download (15).png)
 
-![](Arcgis_Project_nyc_traffic_pics/download (16).png)
+![](ArcGIS_Project_nyc_traffic_pics/download (16).png)
 
-![](Arcgis_Project_nyc_traffic_pics/download (18).png)
+![](ArcGIS_Project_nyc_traffic_pics/download (18).png)
 
-![](Arcgis_Project_nyc_traffic_pics/download (19).png)
+![](ArcGIS_Project_nyc_traffic_pics/download (19).png)
 
-![](Arcgis_Project_nyc_traffic_pics/download (32).png)
+![](ArcGIS_Project_nyc_traffic_pics/download (32).png)
 
-![](Arcgis_Project_nyc_traffic_pics/download (33).png)
+![](ArcGIS_Project_nyc_traffic_pics/download (33).png)
