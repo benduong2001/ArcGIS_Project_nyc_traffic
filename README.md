@@ -1,6 +1,5 @@
-# ArcGIS_Project_nyc_traffic
-Hello, in this article, I'll be going through a geo-spatial data science project of my exploration of traffic volume statistics in New York City.
-Apart from python, this project requires having ArcGIS, specifically the software ArcMap.
+# Geospatial Data Science Project: New York City Traffic
+This GIS data science project is an exploration of traffic volume statistics in New York City. This README file is a simplified version of the Part 1 notebook, and only includes most of the ArcGIS data preparation, main EDA graphs, and plots from the machine learning model.
 
 ## Data Preparation in ArcGIS
 First, we'll need 3 **base datasets** taken from online.
