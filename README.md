@@ -109,7 +109,7 @@ The ArcGIS portion is complete: each street segment now has its little carved-ou
 
 ![](ArcGIS_Project_nyc_traffic_pics/download32.png)
 
-* But not all of these features are needed for the Machine Learning Model. Only the hour features (Hr*), and the LandUse features are necessaary to predict its traffic volume severity, at a roughly 86% accuracy rate.
+* But not all of these features are needed for the Machine Learning Model. Only the hour features (Hr*), and the LandUse features are necessaary to predict its traffic volume severity, at a roughly 86% accuracy rate. The random forest model divides traffic volume into 3 levels of traffic 0,1,2, from low to high respectively.
 
 ![](ArcGIS_Project_nyc_traffic_pics/download33.png)
 
