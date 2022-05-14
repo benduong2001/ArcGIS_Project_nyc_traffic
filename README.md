@@ -105,7 +105,7 @@ The ArcGIS portion is complete: each street segment now has its little carved-ou
 
 ![](ArcGIS_Project_nyc_traffic_pics/download16.png)
 
-* A final (spearman) correlation heatmap of the features so far.
+* A final correlation heatmap of the features so far.
 
 ![](ArcGIS_Project_nyc_traffic_pics/download32.png)
 
