@@ -1,4 +1,7 @@
 # Geospatial Data Science Project: New York City Traffic
+
+![](ArcGIS_Project_nyc_traffic_pics/ezgif-4-707f550990.gif) 
+
 This GIS data science project is an exploration of traffic volume statistics in New York City. This README file is a simplified version of the Part 1 notebook, and only includes most of the ArcGIS data preparation, main EDA graphs, and output plots from using Random Forest Classification as the predictive machine learning model.
 
 https://www.kaggle.com/bensonduong/geospatial-nyc-traffic-project?scriptVersionId=82701349
