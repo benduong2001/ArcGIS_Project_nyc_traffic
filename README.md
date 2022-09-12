@@ -7,7 +7,7 @@ This GIS data science project is an exploration of traffic volume statistics in 
 
 **Github Repo to App built on Flask and Leaflet.js (seen in gif above)**:  https://github.com/benduong2001/nyc_traffic_flask
 
-**Kaggle Notebook**: https://www.kaggle.com/bensonduong/geospatial-nyc-traffic-project?scriptVersionId=82701349
+**Kaggle Notebook**: https://www.kaggle.com/code/bensonduong/geospatial-nyc-traffic-project/notebook?scriptVersionId=82701349
 
 ## Data Preparation in ArcGIS
 First, we'll need 3 **base datasets** taken from online.
